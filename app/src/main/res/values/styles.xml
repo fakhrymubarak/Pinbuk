@@ -1,0 +1,62 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar" />
+
+    <!--Text Styles-->
+    <style name="TextContext" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:fontFamily">@font/raleway</item>
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <style name="TextContext.LargeBold">
+        <item name="android:fontFamily">@font/playfair_display</item>
+        <item name = "android:textStyle">bold</item>
+        <item name = "android:textSize">18sp</item>
+    </style>
+
+    <style name="TextContext.Large">
+        <item name="android:fontFamily">@font/raleway</item>
+        <item name = "android:textSize">14sp</item>
+    </style>
+
+    <style name="TextContext.Regular">
+        <item name="android:fontFamily">@font/raleway</item>
+        <item name = "android:textSize">12sp</item>
+    </style>
+
+    <style name="TextContext.RegularBold">
+        <item name="android:fontFamily">@font/raleway</item>
+        <item name = "android:textSize">12sp</item>
+        <item name = "android:textStyle">bold</item>
+
+    </style>
+
+    <style name="TextContext.Small">
+        <item name="android:fontFamily">@font/raleway</item>
+        <item name = "android:textSize">10sp</item>
+    </style>
+
+    <!--Button Styles-->
+    <style name="Button_Primary" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:fontFamily">@font/raleway_bold</item>
+        <item name="android:background">@drawable/shape_rectangle_btn_active</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="Button_Secondary" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:fontFamily">@font/raleway</item>
+        <item name="android:background">@drawable/shape_rectangle_btn_inactive</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+</resources>

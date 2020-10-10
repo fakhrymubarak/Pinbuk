@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Pinbuk</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <!--OnBoarding Text-->
+    <string name="ob1_title">Search Books</string>
+    <string name="ob1_desc">People has owned \nthe books you\'ve wanted!</string>
+
+    <string name="ob2_title">Borrow Books</string>
+    <string name="ob2_desc">Borrow from others and \nlet others borrow yours!</string>
+
+    <string name="ob3_title">Get Money</string>
+    <string name="ob3_desc">You\'ll get money \nif people borrow your books!</string>
+
+    <!-- OnbBarding Attribute -->
+    <string name="get_started">Get Started</string>
+    <string name="btn_next">Next</string>
+    <string name="btn_back">Back</string>
+    <string name="ob1_illustration_content">Search Illustration</string>
+    <string name="ob2_illustration_content">Borrow Illustration</string>
+    <string name="ob3_illustration_content">Get Monet Illustration</string>
+    <string name="content_desc_splash">Logo Illustration</string>
+    <string name="logo_illust_content">Logo Illustration</string>
+    <string name="sign_in">Sign In</string>
+    <string name="email">Email</string>
+    <string name="enter_email">Enter your email</string>
+    <string name="password">Password</string>
+    <string name="no_acc">Don\'t have an account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="enter_password">Please enter your password</string>
+    <string name="google">Google</string>
+    <string name="facebook">Facebook</string>
+    <string name="username">Username</string>
+    <string name="name">Name</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="invalid_email_or_password">Invalid Email or Password!</string>
+    <string name="emter_name">Enter your name</string>
+
+</resources>

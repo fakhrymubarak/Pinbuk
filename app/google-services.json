@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "865504634806",
+    "firebase_url": "https://pinbuk-01.firebaseio.com",
+    "project_id": "pinbuk-01",
+    "storage_bucket": "pinbuk-01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:865504634806:android:7c3bb0b9c3c544f40cc317",
+        "android_client_info": {
+          "package_name": "com.fakhry.pinbuk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "865504634806-os7vt1p7bqojhvgkim387ojsek424o77.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFKEOfrxpeE87lims4eWhWQ2sy2PfZExQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "865504634806-os7vt1p7bqojhvgkim387ojsek424o77.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

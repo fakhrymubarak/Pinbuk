@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.fakhry.pinbuk.R
-import com.fakhry.pinbuk.model.UserModel
+import com.fakhry.pinbuk.ui.settings.SettingsActivity
 import com.fakhry.pinbuk.ui.signin.SignInActivity
 import com.fakhry.pinbuk.utils.Preferences
 import com.google.firebase.auth.FirebaseAuth
@@ -53,19 +53,20 @@ class ProfileFragment : Fragment(), View.OnClickListener {
 
             }
             tv_settings -> {
-
+                val intToSettings = Intent(activity, SettingsActivity::class.java)
+                startActivity(intToSettings)
             }
             tv_help -> {
 
-            }
+        }
             btn_logout -> {
                 FirebaseAuth.getInstance().signOut()
                 activity?.finishAffinity()
+
                 val intToSignIn = Intent(activity, SignInActivity::class.java)
                 startActivity(intToSignIn)
 
-                val user = UserModel()
-                preferences.delValues("status")
+                preferences.clearValues()
             }
         }
     }

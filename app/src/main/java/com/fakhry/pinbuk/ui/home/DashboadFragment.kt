@@ -8,19 +8,19 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.fakhry.pinbuk.R
 
-class HomeFragment : Fragment() {
+class DashboadFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private lateinit var dashboardViewModel: DashboardViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel = HomeViewModel()
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
+        dashboardViewModel = DashboardViewModel()
+        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
         val textView: TextView = root.findViewById(R.id.text_home)
-        homeViewModel.text.observe(viewLifecycleOwner, {
+        dashboardViewModel.text.observe(viewLifecycleOwner, {
             textView.text = it
         })
         return root

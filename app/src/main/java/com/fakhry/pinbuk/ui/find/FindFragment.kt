@@ -18,7 +18,7 @@ class FindFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         homeViewModel = FindViewModel()
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
+        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
         val textView: TextView = root.findViewById(R.id.text_home)
         homeViewModel.text.observe(viewLifecycleOwner, {
             textView.text = it

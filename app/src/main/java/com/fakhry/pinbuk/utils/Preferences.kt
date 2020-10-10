@@ -23,9 +23,9 @@ class Preferences(val context: Context) {
         return sharedPref.getString(key, "")
     }
 
-    fun delValues(key: String) {
+    fun clearValues() {
         val editor: SharedPreferences.Editor = sharedPref.edit()
-        editor.remove(key)
+        editor.clear()
         editor.apply()
     }
 }

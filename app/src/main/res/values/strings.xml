@@ -52,5 +52,15 @@
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="invalid_email_or_password">Invalid Email or Password!</string>
     <string name="emter_name">Enter your name</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="title_find">Find</string>
+    <string name="sign_out">Log Out Account</string>
+    <string name="books">Books</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="title_profile">Profile</string>
+    <string name="settings">Settings</string>
+    <string name="keep_it_up_to_date">Keep it up to date</string>
+    <string name="content_porfile_picture">Profile Picture</string>
+    <string name="help">Help</string>
 
 </resources>

@@ -12,10 +12,10 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.fakhry.pinbuk.ui.profile.ProfileFragment"
+        android:id="@+id/navigation_find"
+        android:name="com.fakhry.pinbuk.ui.find.FindFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_find" />
 
     <fragment
         android:id="@+id/navigation_notifications"
@@ -27,5 +27,5 @@
         android:id="@+id/navigation_profile"
         android:name="com.fakhry.pinbuk.ui.profile.ProfileFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_profile" />
 </navigation>

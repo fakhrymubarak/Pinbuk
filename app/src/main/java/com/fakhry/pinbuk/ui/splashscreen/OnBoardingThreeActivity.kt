@@ -12,7 +12,11 @@ class OnBoardingThreeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_onboarding_three)
-
+        tv_skip.setOnClickListener{
+            finishAffinity()
+            val intent = Intent(this@OnBoardingThreeActivity, SignInActivity::class.java)
+            startActivity(intent)
+        }
         btn_back.setOnClickListener{
             val intent = Intent(this@OnBoardingThreeActivity, OnBoardingTwoActivity::class.java )
             startActivity(intent)

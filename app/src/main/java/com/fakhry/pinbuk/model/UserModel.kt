@@ -9,7 +9,6 @@ data class UserModel(
     var id_user: String? = "",
 
     var name : String? = "",
-    var password : String? = "",
     var avatar_url : String? = "",
     var email : String? = "",
     var joined_at : String? = "",

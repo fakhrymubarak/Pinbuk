@@ -116,7 +116,7 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener {
                                 Toast.LENGTH_SHORT
                             ).show()
                         } else {
-//                            getUserData(pmEmail, pmPassword)
+                            preferences.setValues("status", "1")
                             finishAffinity()
                             val intToHome = Intent(this, SettingsActivity::class.java)
                             startActivity(intToHome)

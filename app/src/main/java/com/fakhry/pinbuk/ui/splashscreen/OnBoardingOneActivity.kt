@@ -3,6 +3,7 @@ package com.fakhry.pinbuk.ui.splashscreen
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.fakhry.pinbuk.HomeActivity
 import com.fakhry.pinbuk.R
 import com.fakhry.pinbuk.ui.signin.SignInActivity
 import com.fakhry.pinbuk.utils.Preferences
@@ -16,6 +17,15 @@ class OnBoardingOneActivity : AppCompatActivity() {
         setContentView(R.layout.activity_onboarding_one)
 
         preferences = Preferences(this)
+
+        if (preferences.getValues("status").equals("1")) {
+            finishAffinity()
+            val intent = Intent(
+                this@OnBoardingOneActivity,
+                HomeActivity::class.java
+            )
+            startActivity(intent)
+        }
 
         if (preferences.getValues("onboarding").equals("1")) {
             finishAffinity()

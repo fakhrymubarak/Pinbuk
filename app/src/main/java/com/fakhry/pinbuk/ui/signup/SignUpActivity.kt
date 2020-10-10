@@ -2,7 +2,6 @@ package com.fakhry.pinbuk.ui.signup
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.util.Patterns
 import android.view.View
 import android.widget.Toast
@@ -16,7 +15,10 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import kotlinx.android.synthetic.main.activity_sign_in.*
 import kotlinx.android.synthetic.main.activity_sign_up.*
+import kotlinx.android.synthetic.main.activity_sign_up.et_email
+import kotlinx.android.synthetic.main.activity_sign_up.et_password
 
 
 class SignUpActivity : AppCompatActivity(), View.OnClickListener {
@@ -65,9 +67,8 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
                         et_password.requestFocus()
                     }
                     else -> {
-                        Log.d("signup", "btn clicked, otw signup")
                         if (checkPassword(mPassword) || checkEmail(mEmail)) {
-                            pushSignUp(mName, mEmail, mPassword) //METHOD UNTUK LOGIN
+                            pushSignUp(mName, mEmail, mPassword)
                         }
                     }
                 }
@@ -85,7 +86,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun checkPassword(pmPassword: String): Boolean {
-        return if (pmPassword.length <= 6) {
+        return if (pmPassword.length < 6) {
             et_password.error = "Password must be at least 6 characters"
             false
         } else {
@@ -99,21 +100,22 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
         pmPassword: String
     ) {
         mFirebaseAuth.createUserWithEmailAndPassword(pmEmail, pmPassword)
-            .addOnCompleteListener(this,
-                OnCompleteListener<AuthResult?> { task ->
-                    if (!task.isSuccessful) {
-                        Toast.makeText(
-                            this,
-                            task.exception?.message,
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    } else {
-                        inputToDatabase(pmName, pmEmail)
-                        val intToHome = Intent(this, SettingsActivity::class.java)
-                        startActivity(intToHome)
-                        finishAffinity()
-                    }
-                })
+            .addOnCompleteListener(
+                this
+            ) { task ->
+                if (!task.isSuccessful) {
+                    Toast.makeText(
+                        this,
+                        task.exception?.message,
+                        Toast.LENGTH_SHORT
+                    ).show()
+                } else {
+                    inputToDatabase(pmName, pmEmail)
+                    val intToHome = Intent(this, SettingsActivity::class.java)
+                    startActivity(intToHome)
+                    finishAffinity()
+                }
+            }
     }
 
     private fun inputToDatabase(pmName: String, pmEmail: String) {
@@ -122,8 +124,8 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
         user.name = pmName
         user.email = pmEmail
 
-        preferences.setValues("name", user.name.toString())
-        preferences.setValues("password", user.password.toString())
+        preferences.setValues("name", pmName)
+        preferences.setValues("email", pmEmail)
 
         preferences.setValues("status", "1")
 
@@ -138,6 +140,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
                         Toast.LENGTH_LONG
                     ).show()
                 } else {
+                    tv_invalid.visibility = View.VISIBLE
                     Toast.makeText(
                         this, "Failed to login, Please try again",
                         Toast.LENGTH_LONG

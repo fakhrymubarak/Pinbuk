@@ -6,6 +6,7 @@
 
     <color name="colorBlack">#0B0B0B</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorRed">#BC2222</color>
 
     <color name="colorActiveButton">#0359DA</color>
     <color name="colorInactiveButton">#454749</color>

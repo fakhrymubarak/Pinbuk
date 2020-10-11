@@ -12,18 +12,24 @@
         android:theme="@style/AppTheme.NoActionBar"
         tools:ignore="AllowBackup">
         <activity
-            android:name=".ui.settings.SettingsActivity"
+            android:name=".ui.activity.AddNewBooksActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity android:name=".ui.activity.BooksActivity" />
+        <activity
+            android:name=".ui.activity.SettingsActivity"
             android:label="@string/title_activity_settings" />
         <activity
-            android:name=".ui.signup.SignUpActivity"
+            android:name=".ui.activity.SignUpActivity"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".ui.signin.SignInActivity" />
-        <activity android:name=".ui.splashscreen.OnBoardingOneActivity" />
-        <activity android:name=".ui.splashscreen.OnBoardingTwoActivity" />
-        <activity android:name=".ui.splashscreen.OnBoardingThreeActivity" />
-        <activity android:name=".HomeActivity" />
         <activity
-            android:name=".ui.splashscreen.SplashScreenActivity"
+            android:name=".ui.activity.SignInActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".ui.activity.splashscreen.OnBoardingOneActivity" />
+        <activity android:name=".ui.activity.splashscreen.OnBoardingTwoActivity" />
+        <activity android:name=".ui.activity.splashscreen.OnBoardingThreeActivity" />
+        <activity android:name=".ui.activity.HomeActivity" />
+        <activity
+            android:name=".ui.activity.splashscreen.SplashScreenActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

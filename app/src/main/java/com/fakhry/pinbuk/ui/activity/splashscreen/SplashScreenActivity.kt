@@ -1,4 +1,4 @@
-package com.fakhry.pinbuk.ui.splashscreen
+package com.fakhry.pinbuk.ui.activity.splashscreen
 
 import android.content.Intent
 import android.os.Bundle

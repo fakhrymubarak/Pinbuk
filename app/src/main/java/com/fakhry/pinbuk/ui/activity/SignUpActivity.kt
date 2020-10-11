@@ -1,4 +1,4 @@
-package com.fakhry.pinbuk.ui.signup
+package com.fakhry.pinbuk.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,17 +6,12 @@ import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.fakhry.pinbuk.HomeActivity
 import com.fakhry.pinbuk.R
 import com.fakhry.pinbuk.model.UserModel
-import com.fakhry.pinbuk.ui.signin.SignInActivity
 import com.fakhry.pinbuk.utils.Preferences
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.activity_sign_in.*
 import kotlinx.android.synthetic.main.activity_sign_up.*
-import kotlinx.android.synthetic.main.activity_sign_up.et_email
-import kotlinx.android.synthetic.main.activity_sign_up.et_password
 
 
 class SignUpActivity : AppCompatActivity(), View.OnClickListener {
@@ -101,11 +96,13 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun setDatabase(pmName: String, pmEmail: String, pmUid: String) {
         val user = UserModel()
+        user.user_uid = pmUid
         user.name = pmName
         user.email = pmEmail
 
         preferences.setValues("name", pmName)
         preferences.setValues("email", pmEmail)
+        preferences.setValues("user_uid", pmUid)
         preferences.setValues("status", "1")
 
         FirebaseDatabase.getInstance().getReference("users")
@@ -117,7 +114,6 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
                         Toast.LENGTH_LONG
                     ).show()
                 } else {
-                    tv_invalid.visibility = View.VISIBLE
                     Toast.makeText(
                         this, task.exception?.message,
                         Toast.LENGTH_LONG

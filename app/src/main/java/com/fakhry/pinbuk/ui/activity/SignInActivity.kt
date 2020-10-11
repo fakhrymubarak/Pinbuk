@@ -1,16 +1,12 @@
-package com.fakhry.pinbuk.ui.signin
+package com.fakhry.pinbuk.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.fakhry.pinbuk.HomeActivity
 import com.fakhry.pinbuk.R
 import com.fakhry.pinbuk.model.UserModel
-import com.fakhry.pinbuk.ui.signup.SignUpActivity
 import com.fakhry.pinbuk.utils.Preferences
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuth.AuthStateListener
@@ -65,7 +61,6 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener {
                         et_password.requestFocus()
                     }
                     else -> {
-
                         doAuthSignIn(mEmail, mPassword)
                     }
                 }
@@ -74,12 +69,15 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun doAuthSignIn(pmEmail: String, pmPassword: String) {
+        progress_bar.visibility = View.VISIBLE
         mAuthStateListener = AuthStateListener {
             val mFirebaseUser = mFirebaseAuth.currentUser
             if (mFirebaseUser != null) {
+                progress_bar.visibility = View.GONE
                 val intent = Intent(this, HomeActivity::class.java)
                 startActivity(intent)
             } else {
+                progress_bar.visibility = View.GONE
                 Toast.makeText(this, "Please SignUp", Toast.LENGTH_SHORT).show()
             }
         }
@@ -87,14 +85,9 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener {
         mFirebaseAuth.signInWithEmailAndPassword(pmEmail, pmPassword)
             .addOnCompleteListener(this) { task ->
                 if (!task.isSuccessful) {
-                    Toast.makeText(
-                        this,
-                        task.exception?.message,
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    tv_invalid.visibility = View.VISIBLE
                 } else {
                     val uid = FirebaseAuth.getInstance().currentUser!!.uid
-                    Log.d("gabut", "INI UID : $uid")
                     getDatabase(uid)
                 }
             }
@@ -103,42 +96,41 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener {
     private fun getDatabase(pmUid: String) {
         mFirebaseDatabase.child(pmUid).addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val user = dataSnapshot.getValue(UserModel::class.java)
-                if (user == null) {
+                val userInDatabase = dataSnapshot.getValue(UserModel::class.java)
+                if (userInDatabase == null) {
                     Toast.makeText(
                         this@SignInActivity,
                         "Database Error,\nPlease contact our CS.",
                         Toast.LENGTH_LONG
                     ).show()
                 } else {
-                    preferences.setValues("name", user.name.toString())
-                    preferences.setValues("avatar_url", user.avatar_url.toString())
-                    preferences.setValues("email", user.email.toString())
-                    preferences.setValues("joined_at", user.joined_at.toString())
-                    preferences.setValues("whats_app_url", user.whats_app_url.toString())
-
-                    preferences.setValues("domicile", user.domicile.toString())
-                    preferences.setValues("list_book_own", user.list_book_own.toString())
+                    preferences.setValues("user_uid", userInDatabase.user_uid.toString())
+                    preferences.setValues("name", userInDatabase.name.toString())
+                    preferences.setValues("avatar_url", userInDatabase.avatar_url.toString())
+                    preferences.setValues("email", userInDatabase.email.toString())
+                    preferences.setValues("whats_app_url", userInDatabase.whats_app_url.toString())
+                    preferences.setValues("domicile", userInDatabase.domicile.toString())
+                    preferences.setValues("list_book_own", userInDatabase.list_book_own.toString())
                     preferences.setValues(
                         "list_chart_books",
-                        user.list_chart_books.toString()
+                        userInDatabase.list_chart_books.toString()
                     )
                     preferences.setValues(
                         "list_borrowed_books",
-                        user.list_borrowed_books.toString()
+                        userInDatabase.list_borrowed_books.toString()
                     )
 
-                    preferences.setValues("wallet_id", user.wallet_id.toString())
+                    preferences.setValues("wallet_id", userInDatabase.wallet_id.toString())
 
-                    preferences.setValues("list_following", user.list_following.toString())
+                    preferences.setValues("list_following", userInDatabase.list_following.toString())
                     preferences.setValues(
                         "following_number",
-                        user.following_number.toString()
+                        userInDatabase.following_number.toString()
                     )
-                    preferences.setValues("list_followers", user.list_followers.toString())
+                    preferences.setValues("list_followers", userInDatabase.list_followers.toString())
                     preferences.setValues(
                         "followers_number",
-                        user.followers_number.toString()
+                        userInDatabase.followers_number.toString()
                     )
                     preferences.setValues("status", "1")
 

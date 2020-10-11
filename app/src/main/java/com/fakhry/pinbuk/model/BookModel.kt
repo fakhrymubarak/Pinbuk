@@ -5,13 +5,13 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class BookModel(
-    val isbn : String? = "",
+    var isbn : String? = "",
 
-    val title : String? = "",
-    val authors : String? = "",
+    var title : String? = "",
+    var author : String? = "",
 
-    val category : String? = "",
-    val cover_url : String? = "",
+    var category : String? = "",
+    var cover_url : String? = "",
 
-    val year_published : Int? = null
+    var year_published : String? = ""
 ) : Parcelable

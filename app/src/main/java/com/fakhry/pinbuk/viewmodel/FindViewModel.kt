@@ -1,13 +1,13 @@
-package com.fakhry.pinbuk.ui.home
+package com.fakhry.pinbuk.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class DashboardViewModel : ViewModel() {
+class FindViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+        value = "This is Find Fragment"
     }
     val text: LiveData<String> = _text
 }

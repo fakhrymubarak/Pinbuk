@@ -1,4 +1,4 @@
-package com.fakhry.pinbuk.ui.profile
+package com.fakhry.pinbuk.ui.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,14 +9,15 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.fakhry.pinbuk.R
-import com.fakhry.pinbuk.ui.settings.SettingsActivity
-import com.fakhry.pinbuk.ui.signin.SignInActivity
+import com.fakhry.pinbuk.ui.activity.BooksActivity
+import com.fakhry.pinbuk.ui.activity.SettingsActivity
+import com.fakhry.pinbuk.ui.activity.SignInActivity
 import com.fakhry.pinbuk.utils.Preferences
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_profile.*
 
 class ProfileFragment : Fragment(), View.OnClickListener {
-    lateinit var preferences: Preferences
+    private lateinit var preferences: Preferences
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -47,7 +48,10 @@ class ProfileFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v) {
             tv_books -> {
-
+                val uid = preferences.getValues("user_uid")
+                val intToBooks = Intent(context, BooksActivity::class.java)
+                intToBooks.putExtra(BooksActivity.EXTRA_STATE, uid)
+                startActivity(intToBooks)
             }
             tv_edit_profile -> {
 

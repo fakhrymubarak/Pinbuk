@@ -6,12 +6,11 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class UserModel(
 //    var id_user: Int = 0,
-    var id_user: String? = "",
+    var user_uid: String? = "",
 
     var name : String? = "",
     var avatar_url : String? = "",
     var email : String? = "",
-    var joined_at : String? = "",
     var whats_app_url : String? = "",
 
     var domicile : String? = "",

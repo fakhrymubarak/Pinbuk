@@ -1,4 +1,4 @@
-package com.fakhry.pinbuk.ui.notifications
+package com.fakhry.pinbuk.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

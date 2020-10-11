@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.fakhry.pinbuk.ui.home.DashboadFragment"
+        android:name="com.fakhry.pinbuk.ui.fragment.DashboadFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_find"
-        android:name="com.fakhry.pinbuk.ui.find.FindFragment"
+        android:name="com.fakhry.pinbuk.ui.fragment.FindFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_find" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.fakhry.pinbuk.ui.notifications.NotificationsFragment"
+        android:name="com.fakhry.pinbuk.ui.fragment.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.fakhry.pinbuk.ui.profile.ProfileFragment"
+        android:name="com.fakhry.pinbuk.ui.fragment.ProfileFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_profile" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.fakhry.pinbuk.ui.settings
+package com.fakhry.pinbuk.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

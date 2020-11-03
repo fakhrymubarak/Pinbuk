@@ -80,5 +80,6 @@
     <string name="enter_category">Books category</string>
     <string name="isbn">ISBN</string>
     <string name="enter_isbn">Books ISBN</string>
+    <string name="sign_up_with_google">Sign Up With Google</string>
 
 </resources>

@@ -2,6 +2,7 @@ package com.fakhry.pinbuk.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -85,7 +86,9 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener {
         mFirebaseAuth.signInWithEmailAndPassword(pmEmail, pmPassword)
             .addOnCompleteListener(this) { task ->
                 if (!task.isSuccessful) {
+                    Log.d("aseloleBiasa", "Aselole 01 :")
                     tv_invalid.visibility = View.VISIBLE
+                    progress_bar.visibility = View.GONE
                 } else {
                     val uid = FirebaseAuth.getInstance().currentUser!!.uid
                     getDatabase(uid)
@@ -134,9 +137,11 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener {
                     )
                     preferences.setValues("status", "1")
 
-                    finishAffinity()
+                    progress_bar.visibility = View.GONE
+                    tv_invalid.visibility = View.GONE
                     val intToHome = Intent(this@SignInActivity, HomeActivity::class.java)
                     startActivity(intToHome)
+                    finishAffinity()
                 }
 
             }

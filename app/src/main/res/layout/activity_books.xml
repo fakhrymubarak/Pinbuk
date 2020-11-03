@@ -69,7 +69,7 @@
         android:clickable="true"
         android:elevation="8dp"
         android:focusable="true"
-        android:src="@drawable/ic_add_blac_24dp"
+        android:src="@drawable/ic_add_black_24dp"
         app:fabSize="normal" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

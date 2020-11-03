@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "865504634806",
-    "firebase_url": "https://pinbuk-01.firebaseio.com",
-    "project_id": "pinbuk-01",
-    "storage_bucket": "pinbuk-01.appspot.com"
+    "project_number": "676029029990",
+    "firebase_url": "https://pinbuk-3b8c4.firebaseio.com",
+    "project_id": "pinbuk-3b8c4",
+    "storage_bucket": "pinbuk-3b8c4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:865504634806:android:7c3bb0b9c3c544f40cc317",
+        "mobilesdk_app_id": "1:676029029990:android:1fe42d1b336b4d8d91d7a7",
         "android_client_info": {
           "package_name": "com.fakhry.pinbuk"
         }
       },
       "oauth_client": [
         {
-          "client_id": "865504634806-os7vt1p7bqojhvgkim387ojsek424o77.apps.googleusercontent.com",
+          "client_id": "676029029990-c6qpuljhn6351v2k6020krng2edm2gh8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fakhry.pinbuk",
+            "certificate_hash": "1fe8666a6b433148c4c5ccb0071ed1fb8e98f3a4"
+          }
+        },
+        {
+          "client_id": "676029029990-gjcmmjbhdbh60jht40l9j9tshm7rkq55.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCFKEOfrxpeE87lims4eWhWQ2sy2PfZExQ"
+          "current_key": "AIzaSyBkPTSPbvuZQizDiSeL3zeNzEm3EK2w1LY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "865504634806-os7vt1p7bqojhvgkim387ojsek424o77.apps.googleusercontent.com",
+              "client_id": "676029029990-gjcmmjbhdbh60jht40l9j9tshm7rkq55.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

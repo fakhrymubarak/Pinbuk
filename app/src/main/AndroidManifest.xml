@@ -13,7 +13,7 @@
         tools:ignore="AllowBackup">
         <activity
             android:name=".ui.activity.AddNewBooksActivity"
-            android:windowSoftInputMode="stateHidden|adjustPan" />
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity android:name=".ui.activity.BooksActivity" />
         <activity
             android:name=".ui.activity.SettingsActivity"
@@ -23,7 +23,7 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".ui.activity.SignInActivity"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity android:name=".ui.activity.splashscreen.OnBoardingOneActivity" />
         <activity android:name=".ui.activity.splashscreen.OnBoardingTwoActivity" />
         <activity android:name=".ui.activity.splashscreen.OnBoardingThreeActivity" />
